@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from .password import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,9 +77,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+                'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djangogirls_blog',
+        'USER': 'rahim',
+        'PASSWORD': database_pass,
+        'HOST': 'localhost',
+        'PORT': '',
+        }
 }
 
 
